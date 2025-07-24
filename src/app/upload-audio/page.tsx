@@ -25,7 +25,7 @@ export default function UploadAudioPage() {
     status: "pending",
     profile_image_url: "https://image.com/",
     audio_preview_url: "https://audio.com/",
-    tags: ["Nice ", "Ai generated"]
+    tags: ["Ai generated"]
   });
 
   // Add shouldSubmit state

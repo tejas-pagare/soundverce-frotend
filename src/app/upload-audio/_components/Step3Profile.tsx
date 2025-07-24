@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useRef, useState } from "react";
+import TagInputChips from "./ChipComponent";
 
 interface Step3ProfileProps {
   onDone: () => void;
@@ -79,13 +80,14 @@ export default function Step3Profile({ artistData, setArtistData, onDone }: Step
               </div>
             </div>
             
-            <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4">
+            {/* <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4">
               <label className="text-[#fff] text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] font-sans min-w-[80px] sm:min-w-[90px] md:min-w-[100px] lg:min-w-[110px]">Tags</label>
               <button>
                  <Image src="/add.svg" alt="Add profile" width={30} height={30} />
               </button>
             </div>
-            
+             */}
+             <TagInputChips artistData={artistData} setArtistData={setArtistData}/>
             <div className="flex flex-col sm:flex-row sm:items-center gap-1.5 sm:gap-2 md:gap-3 lg:gap-4">
               <label className="text-[#fff] text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] xl:text-[15px] font-sans min-w-[80px] sm:min-w-[90px] md:min-w-[100px] lg:min-w-[110px]">DNA Visibility</label>
               <div className="w-full sm:max-w-[110px] md:max-w-[120px] lg:max-w-[140px] xl:max-w-[160px]">
