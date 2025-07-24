@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState, useRef } from "react";
 import ReactDOM from "react-dom";
 
@@ -121,7 +122,7 @@ export default function TopBarUploadAudio() {
         <div className="w-0 xl:w-0"></div>
         {/* Profile Icon - Fixed positioning for tablet view */}
         <div className="w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 lg:w-11 lg:h-11 rounded-full overflow-hidden cursor-pointer group relative ml-auto mr-6 sm:mr-6 md:mr-6 lg:mr-6 xl:mr-1.5" ref={userRef}>
-          <img src="/dummy.jpg" alt="Profile" className="w-full h-full object-cover" onClick={() => setOpen(!open)} />
+          <Image fill  src="/dummy.jpg" alt="Profile" className="w-full h-full object-cover" onClick={() => setOpen(!open)} />
         </div>
         {open && ReactDOM.createPortal(
           <div style={dropdownStyle} className="bg-[#232323] rounded-lg shadow-lg border border-[#383838] flex flex-col">

@@ -44,6 +44,7 @@ export default function Step4Publish({ artistData, setArtistData, shouldSubmit, 
     );
     if (!isValid) {
       console.warn("Artist data is incomplete. Not submitting.", artistData);
+      toast.error("Artist data is incomplete. Not submitting.")
       setShouldSubmit(false);
       return;
     }

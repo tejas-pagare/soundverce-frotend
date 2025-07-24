@@ -3,17 +3,18 @@ import Link from "next/link";
 import { useState } from "react";
 import SideBarIcon from "./sidebarIcon";
 import { PlusCircle, Home, Search, Library } from "lucide-react";
+import Image from "next/image";
 export default function SideBar() {
   const [isOpen, setIsOpen] = useState(false);
   const sidebarOptions = [
-    { href: "/add", Icon: PlusCircle, alt: "Add", label: "Add" },
+    { href: "/", Icon: PlusCircle, alt: "Add", label: "Add" },
     { href: "/", Icon: Home, alt: "Home", label: "Home" },
-    { href: "/explore", Icon: Search, alt: "Explore", label: "Explore" },
+    { href: "/", Icon: Search, alt: "Explore", label: "Explore" },
     {
-      href: "/library",
+      href: "/artists",
       Icon: Library,
-      alt: "Library",
-      label: "Library",
+      alt: "Artists",
+      label: "Artists",
       extraClass: "mb-1 sm:mb-2",
     }
   ];
@@ -65,7 +66,9 @@ export default function SideBar() {
         {/* Top logo */}
         <div className="flex flex-col items-center">
           <div className="mb-4 sm:mb-5.5 mt-2">
-            <img
+            <Image
+            height={10}
+            width={10}
               src="/logoSquare.png"
               alt="logo"
               className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 lg:h-9 lg:w-9 object-cover object-center "
@@ -75,9 +78,9 @@ export default function SideBar() {
 
         {/* Middle navigation */}
         <div className="flex flex-col items-center gap-y-4">
-          {sidebarOptions.map((option) => (
+          {sidebarOptions.map((option,index) => (
             <SideBarIcon
-              key={option.href}
+              key={option.href+index}
               href={option.href}
               Icon={option.Icon}
               alt={option.alt}

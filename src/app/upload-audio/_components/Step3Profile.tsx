@@ -39,7 +39,7 @@ export default function Step3Profile({ artistData, setArtistData, onDone }: Step
         {children}
       </select>
       <span className="pointer-events-none absolute right-1.5 sm:right-2 md:right-2 lg:right-3 top-1/2 -translate-y-1/2">
-        <img src="/dropDown.svg" alt="dropdown" width={10} height={8} className="sm:w-[11px] sm:h-[8px] md:w-[12px] md:h-[9px] lg:w-[14px] lg:h-[10px] xl:w-[15px] xl:h-[11px]" />
+        <Image src="/dropDown.svg" alt="dropdown" width={10} height={8} className="sm:w-[11px] sm:h-[8px] md:w-[12px] md:h-[9px] lg:w-[14px] lg:h-[10px] xl:w-[15px] xl:h-[11px]" />
       </span>
     </div>
   );
@@ -150,9 +150,9 @@ export default function Step3Profile({ artistData, setArtistData, onDone }: Step
               title="Click to upload profile picture"
             >
               {profileImg ? (
-                <Image src={profileImg} alt="Profile preview" className="object-cover w-full h-full rounded-full" />
+                <Image width={20} height={20} src={profileImg} alt="Profile preview" className="object-cover w-full h-full rounded-full" />
               ) : (
-                <Image src="/add.svg" alt="Add profile" className="w-[36px] sm:w-[42px] md:w-[48px] lg:w-[56px] xl:w-[64px] h-[36px] sm:h-[42px] md:h-[48px] " width={50} height={50} />
+                <Image  src="/add.svg" alt="Add profile" className="w-[36px] sm:w-[42px] md:w-[48px] lg:w-[56px] xl:w-[64px] h-[36px] sm:h-[42px] md:h-[48px] " width={50} height={50} />
               )}
               <input
                 type="file"

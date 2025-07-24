@@ -1,4 +1,5 @@
 "use client";
+import Image from "next/image";
 import { useEffect, useState } from "react";
 
 interface Artist {
@@ -55,7 +56,9 @@ export default function ArtistsPage() {
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
       {artists.length === 0 && !error && (
         <div className="col-span-full flex flex-col items-center justify-center w-full">
-          <img
+          <Image
+          height={40}
+          width={40}
             src="/dummy.jpg"
             alt="No artists"
             className="w-20 sm:w-24 h-20 sm:h-24 rounded-full object-cover mb-4 border border-[#383838]"
@@ -74,7 +77,9 @@ export default function ArtistsPage() {
           <div className="flex flex-col justify-between items-stretch h-[440px] rounded-[calc(1rem-2px)]  p-5 sm:p-6">
             {/* Header */}
             <div className="flex flex-col items-center mb-3">
-              <img
+              <Image
+                width={20}
+                height={20}
                 src="/dummy.jpg"
                 alt={artist.creator_name}
                 className="w-20 h-20 rounded-full object-cover mb-3 border-2 border-[#383838] shadow-lg"
@@ -83,7 +88,7 @@ export default function ArtistsPage() {
                 {artist.creator_name}
               </h2>
               <div className="flex flex-wrap gap-2 justify-center w-full">
-                {artist.tags?.map((tag) => (
+                {artist.tags?.slice(1).map((tag) => (
                   <span
                     key={tag}
                     className="bg-[#232326] text-[#bdbdbd] text-xs px-3 py-1 rounded-full font-medium"
@@ -111,7 +116,7 @@ export default function ArtistsPage() {
                 License: <span className="font-semibold">{artist.license_type}</span>
               </div>
               <div>
-                Status: <span className="font-semibold">{artist.status}</span>
+                Status: <span className="font-semibold">{artist.status} : Done</span>
               </div>
             </div>
 

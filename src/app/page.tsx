@@ -9,7 +9,7 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen w-full bg-[#0e0e0f]">
       
-      <div className="flex flex-col flex-1 min-h-screen overflow-y-auto">
+      <div className="flex flex-col flex-1 min-h-screen ">
         <Topbar />
 
         <main className="flex flex-col px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[96px] py-4 sm:py-6 gap-4 sm:gap-6 font-sans max-w-full  md:min-h-[calc(100vh-200px)] lg:justify-start lg:min-h-0">

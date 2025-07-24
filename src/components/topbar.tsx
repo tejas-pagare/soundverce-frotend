@@ -8,6 +8,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import Image from "next/image";
 export default function Topbar() {
   const [open, setOpen] = useState(false);
   const userRef = useRef<HTMLDivElement>(null);
@@ -60,7 +61,8 @@ export default function Topbar() {
               className="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden cursor-pointer group relative ml-auto"
               ref={userRef}
             >
-              <img
+              <Image
+              fill
             src="/dummy.jpg"
             alt="Profile"
             className="w-full h-full object-cover"
