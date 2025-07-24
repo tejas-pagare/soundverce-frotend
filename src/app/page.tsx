@@ -1,103 +1,72 @@
-import Image from "next/image";
+"use client";
+import Card from "@/components/Card";
+import Topbar from "@/components/topbar";
+import { useRouter } from "next/navigation";
 
-export default function Home() {
+export default function HomePage() {
+  const router = useRouter();
+
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <div className="flex min-h-screen w-full bg-[#0e0e0f]">
+      
+      <div className="flex flex-col flex-1 min-h-screen overflow-y-auto">
+        <Topbar />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        <main className="flex flex-col px-4 sm:px-6 md:px-8 lg:px-12 xl:px-[96px] py-4 sm:py-6 gap-4 sm:gap-6 font-sans max-w-full  md:min-h-[calc(100vh-200px)] lg:justify-start lg:min-h-0">
+          <Card>
+            <h2 className=" text-white text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] leading-[22px] sm:leading-[25px] md:leading-[28px] lg:leading-[30px] font-grotesk" >
+              Verify your creator identity → Unlock your DNA
+            </h2>
+            <p className="text-[#9f9f9f] text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-[17px] sm:leading-[18px] md:leading-[19px] lg:leading-[20px] mt-2 font-sans">
+              Simply claim your profile, and we'll build your DNA automatically.
+              Are you a creator with music already on Spotify, YouTube etc?
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 mt-4 sm:mt-6">
+              <button className="font-medium bg-[#007d49] text-white w-full sm:w-[200px] md:w-[220px] lg:w-[240px] h-[44px] sm:h-[48px] lg:h-[56px] rounded-full text-[13px] sm:text-[14px] lg:text-[16px] hover:bg-green-700 transition cursor-pointer">
+                Claim your profile
+              </button>
+              <button className="font-medium bg-[#363636] text-white w-full sm:w-[200px] md:w-[220px] lg:w-[240px] h-[44px] sm:h-[48px] lg:h-[56px] rounded-full text-[13px] sm:text-[14px] lg:text-[16px] hover:bg-[#444] transition border border-[#383838] cursor-pointer">
+                This doesn't apply to me
+              </button>
+            </div>
+          </Card>
+
+          <Card>
+            <h2 className="text-white text-[18px] sm:text-[20px] md:text-[22px] lg:text-[24px] leading-[22px] sm:leading-[25px] md:leading-[28px] lg:leading-[30px] font-grotesk">
+              Build DNA by Uploading Audio Tracks
+            </h2>
+            <p className="text-[#9f9f9f] text-[13px] sm:text-[14px] md:text-[15px] lg:text-[16px] leading-[17px] sm:leading-[18px] md:leading-[19px] lg:leading-[20px] mt-2">
+              You can upload your music, and build your Sonic DNA. Please note
+              that by default all DNAs remain private.
+            </p>
+            <ul className="pl-2 text-[#9f9f9f] text-[11px] sm:text-[12px] md:text-[13px] lg:text-[14px] leading-[15px] sm:leading-[16px] md:leading-[17px] lg:leading-[18px] mt-2 space-y-1">
+              <li className="flex items-start">
+                <span className="text-white mr-2 mt-0.5">•</span>
+                <span>
+                  <span className="text-white">Build with AI</span>: With this,
+                  AI will take care of captions, categorisations, tags.
+                </span>
+              </li>
+              <li className="flex items-start">
+                <span className="text-white mr-2 mt-0.5">•</span>
+                <span>
+                  <span className="text-white">Build Manually</span>: You'll
+                  have to manually add captions, categorisations and tags.
+                </span>
+              </li>
+            </ul>
+            <button
+              onClick={() => {
+                router.push("/upload-audio");
+              }}
+              className="bg-[#007d49] text-white w-full sm:w-[200px] md:w-[220px] lg:w-[240px] h-[44px] sm:h-[48px] lg:h-[56px] rounded-full text-[13px] sm:text-[14px] lg:text-[16px] hover:bg-green-700 transition mt-4 sm:mt-5 cursor-pointer font-medium"
+              
+            >
+              Upload audio
+            </button>
+          </Card>
+        </main>
+      </div>
     </div>
   );
 }
